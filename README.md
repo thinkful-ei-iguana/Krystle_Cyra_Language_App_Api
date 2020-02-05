@@ -6,7 +6,7 @@ If using user `dunder_mifflin`:
 
 ```bash
 mv example.env .env
-createdb -U dunder_mifflin spaced-repetition
+createdb -U dunder_mifflin spaced_petition
 createdb -U dunder_mifflin spaced_repetition_test
 ```
 

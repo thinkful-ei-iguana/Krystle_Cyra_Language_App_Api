@@ -17,18 +17,26 @@ VALUES
 
 INSERT INTO "language" ("id", "name", "user_id")
 VALUES
-  (1, 'French', 1);
+  (1, 'Spanish', 1);
 
 INSERT INTO "word" ("id", "language_id", "original", "translation", "next")
 VALUES
-  (1, 1, 'entraine toi', 'practice', 2),
-  (2, 1, 'bonjour', 'hello', 3),
-  (3, 1, 'maison', 'house', 4),
-  (4, 1, 'développeur', 'developer', 5),
-  (5, 1, 'traduire', 'translate', 6),
-  (6, 1, 'incroyable', 'amazing', 7),
-  (7, 1, 'chien', 'dog', 8),
-  (8, 1, 'chat', 'cat', null);
+  (1, 1, 'hola', 'hi', 2),
+  (2, 1, 'gat', 'cat', 3),
+  (3, 1, 'casa', 'house', 4),
+  (4, 1, 'desarrollador', 'developer', 5),
+  (5, 1, 'traducir', 'translate', 6),
+  (6, 1, 'increible', 'amazing', 7),
+  (7, 1, 'perro', 'dog', 8),
+  (8, 1, 'Practir', 'to practice', null),
+  -- (9, 1, 'denada', 'you are welcome', 10),
+  -- (10, 1, 'perdon', 'excuse me', 11),
+  -- (11, 1, 'por supuesto', 'of course', 12),
+  -- (12, 1, 'no se', 'I do not know', 13),
+  -- (13, 1, 'te quiero', 'I love you', 14),
+  -- (14, 1, 'te extrano', 'I miss you', 15),
+  -- (15, 1, 'buena suerte', 'good luck', 16),
+  -- (16, 1, 'buen trabajo', 'good job', null);
 
 UPDATE "language" SET head = 1 WHERE id = 1;
 
@@ -39,3 +47,4 @@ SELECT setval('language_id_seq', (SELECT MAX(id) from "language"));
 SELECT setval('user_id_seq', (SELECT MAX(id) from "user"));
 
 COMMIT;
+y
