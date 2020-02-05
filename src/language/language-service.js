@@ -7,10 +7,10 @@ const LanguageService = {
         'language.name',
         'language.user_id',
         'language.head',
-        'language.total_score',
+        'language.total_score'
       )
       .where('language.user_id', user_id)
-      .first()
+      .first();
   },
 
   getLanguageWords(db, language_id) {
@@ -24,10 +24,74 @@ const LanguageService = {
         'next',
         'memory_value',
         'correct_count',
-        'incorrect_count',
+        'incorrect_count'
       )
-      .where({ language_id })
+      .where({ language_id });
   },
-}
 
-module.exports = LanguageService
+  getTotal(db, language_id) {
+    return db 
+      .from('language')
+      .select('total_score')
+      .where( 'id', language_id);
+  },
+
+  startPractice(db, language_id) {
+    return db
+      .from('word')
+      .where({ language_id })
+      .first(
+        'original',
+        'correct_count',
+        'incorrect_count');
+  },
+
+  correctAnswer(db, word_id, memory_value) {
+    return db
+      .from('word')
+      .where('id', word_id)
+      .increment('memory_value', memory_value)
+      .increment('correct_count', 1)
+      .returning(
+        ['next',
+          'correct_count',
+          'incorrect_count',
+          'translation',
+          'memory_value']
+      );
+  },
+
+  
+
+  incorrectAnswer(db, word_id) {
+    return db
+      .from('word')
+      .where('id', word_id)
+      .update('memory_value', 1)
+      .increment('incorrect_count', 1)
+      .returning(
+        ['next',
+          'correct_count',
+          'incorrect_count',
+          'translation',
+          'memory_value']
+      );
+
+  },
+
+  addToTotal(db, language_id) {
+    return db 
+      .from('language')
+      .where('id', language_id)
+      .increment('total_score', 1)
+      .returning(
+        'total_score'
+      );
+  } 
+
+
+
+};
+
+module.exports = LanguageService;
+© 2020 GitHub, Inc.
