@@ -94,4 +94,3 @@ const LanguageService = {
 };
 
 module.exports = LanguageService;
-© 2020 GitHub, Inc.
