@@ -172,17 +172,20 @@ describe('User Endpoints', function () {
           name: 'test name',
         }
         const expectedList = {
-          name: 'French',
+          name: 'Spanish',
           total_score: 0,
           words: [
             { original: 'hola', translation: 'hi' },
-            { original: 'buenos dias', translation: 'good day/hello' },
+            // { original: 'gato', translation: 'cat' },
+            { original: 'buenos dias', translation: 'good day'},
             { original: 'casa', translation: 'house' },
             { original: 'desarrollador/desarrolladora', translation: 'developer' },
             { original: 'traducir', translation: 'translate' },
             { original: 'increible', translation: 'amazing' },
             { original: 'perro', translation: 'dog' },
-            { original: 'gato', translation: 'cat' },
+            {original: 'Practir', translation: 'practice'},
+           { original: 'buenos dias', translation: 'good day/hello' },      
+  
             {original: 'denada', translation: 'you are welcome'},
             {original: 'perdon', translation: 'excuse me'},
             {original: 'por supuesto', translation: 'or course'},
@@ -190,9 +193,17 @@ describe('User Endpoints', function () {
             {original: 'te quiero', translation: 'I love you'},
             {original: 'te extrano', translation: 'I miss you'},
             {original: 'buena suerte', translation: 'good luck'},
-            {original: 'buen trabajo', translation: 'good job'},
+            
           ]
         }
+  //       (1, 1, 'hola', 'hi', 2),
+  // (2, 1, 'gat', 'cat', 3),
+  // (3, 1, 'casa', 'house', 4),
+  // (4, 1, 'desarrollador', 'developer', 5),
+  // (5, 1, 'traducir', 'translate', 6),
+  // (6, 1, 'increible', 'amazing', 7),
+  // (7, 1, 'perro', 'dog', 8),
+  // (8, 1, 'Practir', 'to practice', null),
         return supertest(app)
           .post('/api/user')
           .send(newUser)
