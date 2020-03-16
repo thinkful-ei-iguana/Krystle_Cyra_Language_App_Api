@@ -28,15 +28,15 @@ VALUES
   (5, 1, 'traducir', 'translate', 6),
   (6, 1, 'increible', 'amazing', 7),
   (7, 1, 'perro', 'dog', 8),
-  (8, 1, 'Practir', 'to practice', null),
-  -- (9, 1, 'denada', 'you are welcome', 10),
-  -- (10, 1, 'perdon', 'excuse me', 11),
-  -- (11, 1, 'por supuesto', 'of course', 12),
-  -- (12, 1, 'no se', 'I do not know', 13),
-  -- (13, 1, 'te quiero', 'I love you', 14),
-  -- (14, 1, 'te extrano', 'I miss you', 15),
-  -- (15, 1, 'buena suerte', 'good luck', 16),
-  -- (16, 1, 'buen trabajo', 'good job', null);
+  (8, 1, 'Practir', 'to practice', 9),
+  (9, 1, 'denada', 'you are welcome', 10),
+  (10, 1, 'perdon', 'excuse me', 11),
+  (11, 1, 'por supuesto', 'of course', 12),
+  (12, 1, 'no se', 'I do not know', 13),
+  (13, 1, 'te quiero', 'I love you', 14),
+  (14, 1, 'te extrano', 'I miss you', 15),
+  (15, 1, 'buena suerte', 'good luck', 16),
+  (16, 1, 'buen trabajo', 'good job', null);
 
 UPDATE "language" SET head = 1 WHERE id = 1;
 
